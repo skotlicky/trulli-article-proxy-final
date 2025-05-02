@@ -1,4 +1,14 @@
 export default async function handler(req, res) {
+    // Handle preflight requests
+    if (req.method === 'OPTIONS') {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      res.status(200).end();
+      return;
+    }
+  
+    // Set CORS header for all other requests
     res.setHeader('Access-Control-Allow-Origin', '*');
   
     const { sectionId } = req.query;
