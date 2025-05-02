@@ -1,0 +1,14 @@
+{
+    "functions": {
+      "api/articles.js": {
+        "runtime": "nodejs18.x"
+      }
+    },
+    "routes": [
+      {
+        "src": "/api/articles",
+        "dest": "api/articles.js"
+      }
+    ]
+  }
+  
